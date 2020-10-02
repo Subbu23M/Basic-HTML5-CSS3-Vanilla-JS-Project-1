@@ -1,0 +1,318 @@
+@charset "UTF-8";
+.overlay {
+  /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+  position: absolute;
+  /* stacks one on each other based on value  */
+  z-index: 1;
+  color: white;
+  display: none;
+  opacity: 0;
+  place-content: center;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.animate-overlay {
+  -webkit-animation: orang 3s forwards;
+  animation: orang 3s forwards;
+}
+
+body {
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.top {
+  background: #307D99 url(./bg.jpg);
+  background-position: 17% 83%;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 4em;
+  margin: 0;
+}
+
+.top header {
+  padding: 1em 0;
+}
+
+.top header a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.top h1 {
+  font-size: 2.5rem;
+  margin: 2em 0 1.2em;
+}
+
+.top h1 span {
+  text-transform: uppercase;
+  display: block;
+  font-size: 1.4rem;
+  /* position: relative, it’ll remain “in the flow” of the layout but you can move it around! */
+  position: relative;
+  /* stacks one on each other based on value  */
+  z-index: 1;
+}
+
+.top h1 ::before {
+  content: '';
+  /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+  position: absolute;
+  width: 3.4em;
+  height: .4em;
+  background-color: #00BFFF;
+  bottom: 0;
+  /* stacks one on each other based on value  */
+  z-index: -1;
+  margin-left: -.2em;
+}
+
+.top p {
+  font-weight: bold;
+  line-height: 1.5;
+  text-transform: capitalize;
+  margin: 0 2em 3em;
+}
+
+.top .form-container {
+  background-color: #fff;
+  padding: 2em;
+  margin: 2em -1em 0;
+}
+
+.top .form-container label {
+  color: #2D7D98;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 1em;
+  font-size: 1.2em;
+}
+
+.top .form-container input[type=text] {
+  border: 1px solid #707070;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 2em;
+  border-radius: .5em;
+  margin-top: 1.2em;
+}
+
+.top .form-container input[type=text]:focus {
+  outline: none;
+}
+
+.top .form-container p {
+  color: gray;
+  margin-top: 1em;
+  font-weight: normal;
+  font-size: 1.2em;
+  margin-bottom: 1.5em;
+}
+
+.top .form-container input[type=button] {
+  background-color: #F89104;
+  border: none;
+  color: #fff;
+  width: 100%;
+  padding: 1em 0;
+  font-weight: bold;
+  font-size: 1.4em;
+  border-radius: .5em;
+  cursor: pointer;
+}
+
+.top .form-container input[type=button]:hover {
+  background-color: #d87e01;
+  color: whitesmoke;
+}
+
+.top .form-container input[type=button]:focus {
+  outline: none;
+}
+
+.bottom {
+  margin: 0;
+}
+
+.bottom img {
+  width: 100%;
+}
+
+.bottom .right-section {
+  text-align: center;
+  margin: 3em 1em;
+}
+
+.bottom .right-section h2 {
+  text-transform: uppercase;
+  /* position: relative, it’ll remain “in the flow” of the layout but you can move it around! */
+  position: relative;
+  /* stacks one on each other based on value  */
+  z-index: 2;
+  font-weight: bold;
+}
+
+.bottom .right-section h2::before {
+  content: '';
+  width: 9em;
+  height: .4em;
+  background-color: #00BFFF;
+  /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+  position: absolute;
+  bottom: 0;
+  /* stacks one on each other based on value  */
+  z-index: -2;
+  margin-left: -.3em;
+}
+
+.bottom .right-section p {
+  text-transform: capitalize;
+  line-height: 2;
+}
+
+@media screen and (min-width: 730px) {
+  section {
+    margin: 0 4em;
+  }
+  .form-container {
+    margin: 2em -4em 0;
+  }
+}
+
+@media screen and (min-width: 930px) {
+  .top {
+    text-align: left;
+    padding: 2em 2em;
+  }
+  .top p {
+    margin: 0 0 3em;
+  }
+  .top .form-container {
+    margin: 2em 0 0;
+    padding: 2em;
+    border-radius: .5em;
+    -webkit-box-shadow: 10px 10px 20px orange;
+            box-shadow: 10px 10px 20px orange;
+  }
+  .top form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .top form .form-left {
+    width: 70%;
+  }
+  .top form .form-left label {
+    margin: 0;
+  }
+  .top form .form-left p {
+    margin-bottom: 0;
+  }
+  .top form input[type='button'] {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-left: 1em;
+    font-size: 1.1em;
+    margin-top: 1.7em;
+    padding: .7em 0;
+    width: 30%;
+  }
+  .bottom {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 'food text';
+  }
+  .bottom img {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: food;
+  }
+  .bottom .right-section {
+    -ms-grid-row: 1;
+    -ms-grid-column: 2;
+    grid-area: text;
+    padding: 0 10%;
+    text-align: left;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .bottom .right-section h2 {
+    margin: 0;
+  }
+}
+
+.top {
+  -webkit-animation: for 3s forwards;
+          animation: for 3s forwards;
+}
+
+@-webkit-keyframes for {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-2em);
+            transform: translateY(-2em);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes for {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-2em);
+            transform: translateY(-2em);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes orang {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes orang {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */

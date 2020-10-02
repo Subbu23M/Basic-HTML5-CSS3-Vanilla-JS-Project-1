@@ -1,0 +1,362 @@
+// Press F1 or ctrl+shift+P and type Live Sass: Watch Sass to start live compilation or, type Live Sass: Stop Watching Sass to stop a live compilation.
+
+// Colors
+$top-color:#307D99;
+$whitecolor:#fff;
+
+.overlay{
+    /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+    position: absolute;
+
+    /* stacks one on each other based on value  */
+    z-index: 1;
+
+    color: white;
+    display: none;
+    opacity: 0;
+    place-content: center;
+    height: 100vh;
+    width: 100%;
+    background: rgba(0,0,0,.9);
+}
+
+// It adds these style in DOM
+.animate-overlay{
+    // animation:name duration animation-fill-mode;
+    animation: orang 3s forwards ;
+}
+
+body{
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+.top{
+    background: $top-color url(./bg.jpg);
+
+    // background-position: X-axis & y-axis; 
+    background-position: 17% 83%;
+
+    color: $whitecolor;
+    text-align: center;
+    padding-bottom: 4em;
+    margin: 0;
+
+    header{
+        // padding:top & bottom left & right
+        padding: 1em 0;
+
+        a{
+            color: $whitecolor;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+    }
+
+    h1{
+        font-size: 2.5rem;
+
+        // margin:top right bottom
+        margin: 2em 0 1.2em;
+
+        span{
+            text-transform: uppercase;
+
+            // span element stays on its own line
+            // Displays an element as a block element (like <p>). It starts on a new line, and takes up the whole width
+            display: block;
+
+            font-size: 1.4rem;
+
+            /* position: relative, it’ll remain “in the flow” of the layout but you can move it around! */
+            position: relative;
+
+            /* stacks one on each other based on value  */
+            z-index: 1;
+
+        }
+        ::before{
+            content: '';
+
+            /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+            position: absolute;
+
+            width: 3.4em;
+            height: .4em;
+            background-color: #00BFFF;
+            bottom: 0;
+
+            /* stacks one on each other based on value  */
+            z-index: -1;
+
+            margin-left: -.2em;
+        }
+    }
+
+    p{
+        font-weight: bold;
+        line-height: 1.5;
+        text-transform: capitalize;
+
+        // margin:top right bottom
+        margin: 0 2em 3em;
+    }
+
+    .form-container{
+        background-color: $whitecolor;
+        padding: 2em;
+
+        // margin:top left & right bottom
+        margin: 2em -1em 0;
+
+        label{
+            color: #2D7D98;
+            font-weight: bold;
+
+            // label element stays on its own line
+            // Displays an element as a block element (like <p>). It starts on a new line, and takes up the whole width
+            display: block;
+
+            margin-bottom: 1em;
+            font-size: 1.2em;
+        }
+
+        input[type=text]{
+            // border:size style color
+            border:1px solid #707070;
+
+            width: 100%;
+            box-sizing: border-box;
+            padding: 2em;
+            border-radius: .5em;
+            margin-top: 1.2em;
+        }
+
+        input[type=text]:focus{
+            outline: none;
+        }
+
+        p{
+            color: gray;
+            margin-top: 1em;
+            font-weight: normal;
+            font-size: 1.2em;
+            margin-bottom: 1.5em;
+        }
+
+        input[type=button]{
+            background-color:#F89104;
+            border: none;
+            color: $whitecolor;
+            width: 100%;
+
+            // padding:top & bottom left & right
+            padding: 1em 0;
+
+            font-weight:bold;
+            font-size:1.4em;
+            border-radius:.5em;
+            cursor: pointer;
+        }
+
+        input[type=button]:hover{
+            background-color: rgb(216,126,1);
+            color: whitesmoke;
+        }
+
+        input[type=button]:focus{
+            outline: none;
+        }
+    }
+}
+
+.bottom{
+    margin: 0;
+
+    img{
+        width: 100%;
+    }
+
+    .right-section{
+        text-align: center;
+
+        // margin:top & bottom left & right
+        margin: 3em 1em;
+
+        h2{
+            text-transform: uppercase;
+
+            /* position: relative, it’ll remain “in the flow” of the layout but you can move it around! */
+            position: relative;
+
+            /* stacks one on each other based on value  */
+            z-index: 2;
+
+            font-weight: bold;
+        }
+
+        h2::before{
+            content: '';
+            width: 9em;
+            height: .4em;
+            background-color: #00BFFF;
+
+            /* position: absolute takes elements “out of flow” so its grid space gets collapsed. */
+            position: absolute;
+
+            bottom: 0;
+
+            /* stacks one on each other based on value  */
+            z-index: -2;
+
+            margin-left: -.3em;
+        }
+
+        p{
+            text-transform: capitalize;
+            line-height: 2;
+        }
+    }
+}
+
+// Media Queries
+@media screen and (min-width:730px){
+    section{
+        // margin:top & bottom left & right
+        margin: 0 4em;
+    }
+
+    .form-container{
+        // margin:top left & right bottom
+        margin: 2em -4em 0;
+    }
+}
+
+@media screen and (min-width:930px){
+    .top{
+        text-align: left;
+
+        // padding:top & bottom left & right
+        padding: 2em 2em;
+        
+        p{
+            // margin:top right bottom
+            margin: 0 0 3em;
+        }
+
+        .form-container{
+            // margin:top right bottom
+            margin: 2em 0 0;
+
+            padding: 2em;
+            border-radius: .5em;
+
+            // box-shadow: right bottom blur color;;
+            box-shadow: 10px 10px 20px orange;
+        }
+
+        form{
+            // Converts columns into row
+            display: flex;
+
+            .form-left{
+                width: 70%;
+
+                label{
+                    margin: 0;
+                }
+
+                p{
+                    margin-bottom: 0;
+                }
+            }
+
+            input[type='button']{
+                height: fit-content;
+                margin-left:1em;
+                font-size: 1.1em;
+                margin-top: 1.7em;
+
+                // padding:top & bottom left & right 
+                padding: .7em 0;
+
+                width: 30%;
+            }
+        }
+    }
+
+    .bottom{
+        // converts rows into columns
+        display: grid;
+
+        // divide two columns into equal parts
+        // grid-template-areas: repeat(2,50%);
+
+        grid-template-columns: 50% 50%;
+
+        // grid-template-areas: names to change in positions;
+        grid-template-areas: 'food text';
+
+        img{
+            grid-area: food;
+        }
+
+        .right-section{
+            grid-area: text;
+
+            // padding:top & bottom left & right
+            padding: 0 10%;
+
+            text-align: left;
+
+            // Effects for its child elements on Y-axis
+            align-self: center;
+
+            h2{
+                margin: 0;
+            }
+        }
+    }
+}
+
+// Animations
+
+.top{
+    // animation:name duration animation-fill-mode
+    animation: for 3s forwards;
+}
+
+@keyframes for{
+    from{
+        opacity: 0;
+        transform: translateY(-2em);        
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes orang{
+    0%{
+        opacity: 0;
+    }
+
+    30%{
+        opacity: 1;
+    }
+
+    70%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+    }
+}
